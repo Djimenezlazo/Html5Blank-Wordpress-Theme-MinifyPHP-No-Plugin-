@@ -9,4 +9,4 @@ This wordpress template has MinifyPHP installed, it compiles CSS/JS files fast a
 * The MinifyPHP library is included in function.php
 * Added glob function to grab files (.css / .js) and not have to add files one by one.
 * Only the files in the directories (../css/ and ../js/) should be edited.
-* Once in production the theme will compile the files (css/js) inside the directory (../minified/), where the css / js directories are respectively with the files (css/min.css) & (js/min .js).
+* Once in production the theme will compile the files (css/js) inside the directory (../minified/), where the css / js directories are respectively with the files (css/min.css) & (js/min .js). 
