@@ -1,9 +1,9 @@
-# Html5Blank Wordpress Theme MinifyPHP (No Plugin)
+## Html5Blank Wordpress Theme MinifyPHP (No Plugin)
 Wordpress blank theme with MinifyPHP library (No Plugin)
 
 * Html5Blank: [github.com/toddmotto/html5blank](https://github.com/toddmotto/html5blank)
 * MinifyPHP: [https://github.com/matthiasmullie/minify](https://github.com/matthiasmullie/minify)
-# Theme Description:
+## Theme Description:
 This wordpress template has MinifyPHP installed, it compiles CSS/JS files fast and without any additional program.
 
 * The MinifyPHP library is included in function.php
