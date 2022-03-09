@@ -1,0 +1,6 @@
+{
+    "require": {
+        "bvanhoekelen/php-compressor": "^1.2",
+        "matthiasmullie/minify": "^1.3"
+    }
+}
