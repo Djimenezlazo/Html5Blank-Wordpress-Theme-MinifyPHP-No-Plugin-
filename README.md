@@ -1,4 +1,4 @@
-# Wordpress Theme Minifi (No Plugin)
+# Wordpress Theme Minify (No Plugin)
 Tema en blanco de Wordpress con funciones para compilar (css / js / html) sin plugins.
 
 ## Incluye
