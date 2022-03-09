@@ -7,6 +7,15 @@ namespace Composer\Autoload;
 class ComposerStaticInitb8e0a064c415f84229f3df2a381b1a1c
 {
     public static $prefixLengthsPsr4 = array (
+        'v' => 
+        array (
+            'voku\\helper\\' => 12,
+            'voku\\' => 5,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Component\\CssSelector\\' => 30,
+        ),
         'P' => 
         array (
             'PhpCompressor\\' => 14,
@@ -19,6 +28,18 @@ class ComposerStaticInitb8e0a064c415f84229f3df2a381b1a1c
     );
 
     public static $prefixDirsPsr4 = array (
+        'voku\\helper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/voku/simple_html_dom/src/voku/helper',
+        ),
+        'voku\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/voku/html-min/src/voku',
+        ),
+        'Symfony\\Component\\CssSelector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/css-selector',
+        ),
         'PhpCompressor\\' => 
         array (
             0 => __DIR__ . '/..' . '/bvanhoekelen/php-compressor/src',

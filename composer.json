@@ -1,6 +1,7 @@
 {
     "require": {
         "bvanhoekelen/php-compressor": "^1.2",
-        "matthiasmullie/minify": "^1.3"
+        "matthiasmullie/minify": "^1.3",
+        "voku/html-min": "^4.4"
     }
 }

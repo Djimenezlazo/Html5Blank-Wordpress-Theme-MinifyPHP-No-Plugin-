@@ -1,4 +1,5 @@
 <?php
+//require_once('vendor/html-minify.php');
 require_once('vendor/autoload.php');
 use MatthiasMullie\Minify;
 /*
@@ -107,6 +108,8 @@ function html5blank_conditional_scripts()
         wp_enqueue_script('script'); // Enqueue it!
     }
 }
+
+
 
 /*Agrega Rutas CSS*/
 $sourcePath = get_template_directory().'/css/style.css';
@@ -447,13 +450,37 @@ function create_post_type_html5()
 // Shortcode Demo with Nested Capability
 function html5_shortcode_demo($atts, $content = null)
 {
-    return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
+return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
 }
 
 // Shortcode Demo with simple <h2> tag
 function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
 {
-    return '<h2>' . $content . '</h2>';
+return '<h2>' . $content . '</h2>';
+}
+
+function disable_wp_emojicons() {
+
+// all actions related to emojis
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+
+// filter to remove TinyMCE emojis
+add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+}
+add_action( 'init', 'disable_wp_emojicons' );
+
+function disable_emojicons_tinymce( $plugins ) {
+if ( is_array( $plugins ) ) {
+return array_diff( $plugins, array( 'wpemoji' ) );
+} else {
+return array();
+}
 }
 
 ?>
