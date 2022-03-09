@@ -4,7 +4,7 @@
 		
 		'use strict';
 		
-		// DOM ready, take it away
+		alert("test");
 		
 	});
 	

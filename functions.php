@@ -1,7 +1,6 @@
 <?php
 require_once('vendor/html-minify.php');
 require_once('vendor/autoload.php');
-use MatthiasMullie\Minify;
 /*
  *  Author: Todd Motto | @toddmotto
  *  URL: html5blank.com | @html5blank
@@ -101,36 +100,44 @@ function html5blank_header_scripts()
 }
 
 
+/*Agrega Rutas JS*/
+$sourcePathJs1 = get_template_directory().'/js/plugins.js';
+$sourcePathJs2 = get_template_directory().'/js/scripts.js';
+use MatthiasMullie\Minify;
+$minifierJs = new Minify\JS($sourcePathJs1);
+$minifierJs->add($sourcePathJs2);
+/*Compila JS*/
+$minifiedPathJs = get_template_directory().'/minified/js/min.js';
+$minifierJs->minify($minifiedPathJs);
+
 function html5blank_conditional_scripts()
 {
     if (is_page('home')) {
-        wp_register_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), date('Ymd')); // Conditional script(s)
+        wp_register_script('script', get_template_directory_uri() . '/minified/js/min.js', array('jquery'), date('Ymd')); // Conditional script(s)
         wp_enqueue_script('script'); // Enqueue it!
     }
 }
 
-
-
 /*Agrega Rutas CSS*/
-$sourcePath = get_template_directory().'/css/style.css';
-$minifier = new Minify\CSS($sourcePath);
-
-foreach (glob(get_template_directory().'/css/*.css') as $filename) {
-$minifier->add($filename); 
-}
-
+$sourcePathCss1 = get_template_directory().'/css/bootstrap.css';
+$sourcePathCss2 = get_template_directory().'/css/style.css';
+$minifierCss = new Minify\CSS($sourcePathCss1);
+$minifierCss->add($sourcePathCss2);
 /*Compila CSS*/
-$minifiedPath = get_template_directory().'/minified/css/min.css';
-$minifier->minify($minifiedPath);
+$minifiedPathCss = get_template_directory().'/minified/css/min.css';
+$minifierCss->minify($minifiedPathCss);
 
-
-// Load HTML5 Blank styles
 function html5blank_styles()
 {
 
     wp_register_style('min', get_template_directory_uri().'/minified/css/min.css', array(), date('Ymd'), 'all');
     wp_enqueue_style('min'); // Enqueue it!
 }
+
+
+
+
+
 
 // Register HTML5 Blank Navigation
 function register_html5_menu()
