@@ -1,5 +1,5 @@
 <?php
-//require_once('vendor/html-minify.php');
+require_once('vendor/html-minify.php');
 require_once('vendor/autoload.php');
 use MatthiasMullie\Minify;
 /*
