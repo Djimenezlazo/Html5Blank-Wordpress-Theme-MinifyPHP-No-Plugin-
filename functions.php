@@ -113,7 +113,7 @@ $sourcePath = get_template_directory().'/css/style.css';
 $minifier = new Minify\CSS($sourcePath);
 
 foreach (glob(get_template_directory().'/css/*.css') as $filename) {
-   $minifier->add($filename); 
+$minifier->add($filename); 
 }
 
 /*Compila CSS*/
