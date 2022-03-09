@@ -8,4 +8,6 @@ Tema en blanco de Wordpress con MinifyPHP library (No Plugin)
 Esta plantilla de wordpress tiene instalado MinifyPHP, compila archivos CSS/JS rápido y sin necesidad de programa adicional.
 
 * La libreria MinifyPHP se encuentra incluida en function.php
-* Se añadio funcion glob para captar archivos (*.CSS/*.JS) y no tener que agregar los archivos uno por uno.
+* Se añadio funcion glob para captar archivos (.css / .js) y no tener que agregar los archivos uno por uno.
+* Solo se deben editar los archivos en los directorios (../css/ y ../js/).
+* Una vez en produccion el tema compilara los archivos (css/js) dentro del directorio (../minified/), en donde se encuentran los directorios css / js respectivamente con los archvos (css/min.css) & (js/min.js).
